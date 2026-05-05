@@ -12,7 +12,9 @@ import javax.swing.border.TitledBorder;
 
 public class RobotCoordinatesWindow extends JInternalFrame
         implements RobotModel.RobotStateListener {
-
+/*
+Для гита
+ */
     private final JLabel xCoordinateLabel;
     private final JLabel yCoordinateLabel;
     private final JLabel directionLabel;
@@ -27,7 +29,7 @@ public class RobotCoordinatesWindow extends JInternalFrame
         mainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         JPanel infoPanel = new JPanel(new GridLayout(5, 2, 10, 10));
-        infoPanel.setBorder(new TitledBorder("Текущее состояние"));
+        infoPanel.setBorder(new TitledBorder("Текущеесостояние"));
 
         infoPanel.add(new JLabel("Позиция X:", SwingConstants.RIGHT));
         xCoordinateLabel = new JLabel("0.00", SwingConstants.LEFT);

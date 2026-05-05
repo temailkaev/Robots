@@ -52,7 +52,9 @@ public class GameVisualizer extends JPanel implements RobotModel.RobotStateListe
         });
         setDoubleBuffered(true);
     }
-
+    /*
+    git
+     */
     private void updateFromModel() {
         robotPositionX = model.getRobotPositionX();
         robotPositionY = model.getRobotPositionY();

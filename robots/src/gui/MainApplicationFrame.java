@@ -235,7 +235,9 @@ public class MainApplicationFrame extends JFrame {
             System.exit(0);
         }
     }
-
+/*
+git
+ */
     private void saveWindowStates() {
         if (logWindow != null) {
             windowStateStore.saveWindowState(logWindow, "logWindow");
