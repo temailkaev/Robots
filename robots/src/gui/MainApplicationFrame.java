@@ -27,7 +27,7 @@ public class MainApplicationFrame extends JFrame
     private GameWindow gameWindow;
 
     public MainApplicationFrame() {
-        // Загружаем сохранённые состояния окон
+
         windowStateStore.loadAllStates();
 
         int inset = 50;

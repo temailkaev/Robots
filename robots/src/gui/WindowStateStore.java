@@ -11,10 +11,8 @@ public class WindowStateStore {
         this.storage = new ConfigurationStorage();
     }
 
-    /**
-     * Загружает все сохранённые состояния окон из файла
-     * @return true если загрузка успешна
-     */
+
+
     public boolean loadAllStates() {
         return storage.load();
     }

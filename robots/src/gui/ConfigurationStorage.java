@@ -15,10 +15,6 @@ public class ConfigurationStorage {
         this.properties = new Properties();
     }
 
-    /**
-     * Загружает конфигурацию из файла
-     * @return true если загрузка успешна, false если файл не существует или ошибка
-     */
     public boolean load() {
         File configFile = new File(CONFIG_FILE);
         if (!configFile.exists()) {
