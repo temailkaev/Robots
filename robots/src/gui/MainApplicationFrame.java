@@ -22,14 +22,13 @@ import log.Logger;
 public class MainApplicationFrame extends JFrame
 {
     private final JDesktopPane desktopPane = new JDesktopPane();
-    private WindowStateManager stateManager;
+    private final WindowStateStore windowStateStore = new WindowStateStore();
     private LogWindow logWindow;
     private GameWindow gameWindow;
 
     public MainApplicationFrame() {
-        stateManager = new WindowStateManager();
-
-        stateManager.loadFromFile();
+        // Загружаем сохранённые состояния окон
+        windowStateStore.loadAllStates();
 
         int inset = 50;
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -43,8 +42,9 @@ public class MainApplicationFrame extends JFrame
         gameWindow = new GameWindow();
         gameWindow.setSize(400, 400);
 
-        stateManager.applyWindowState(logWindow, "logWindow");
-        stateManager.applyWindowState(gameWindow, "gameWindow");
+        // Применяем сохранённые состояния к окнам
+        windowStateStore.applyWindowState(logWindow, "logWindow");
+        windowStateStore.applyWindowState(gameWindow, "gameWindow");
 
         addWindow(logWindow);
         addWindow(gameWindow);
@@ -186,7 +186,6 @@ public class MainApplicationFrame extends JFrame
 
         if (result == JOptionPane.YES_OPTION) {
             saveWindowStates();
-
             Logger.debug("Приложение завершает работу");
             System.exit(0);
         }
@@ -195,11 +194,11 @@ public class MainApplicationFrame extends JFrame
     private void saveWindowStates()
     {
         if (logWindow != null) {
-            stateManager.saveWindowState(logWindow, "logWindow");
+            windowStateStore.saveWindowState(logWindow, "logWindow");
         }
         if (gameWindow != null) {
-            stateManager.saveWindowState(gameWindow, "gameWindow");
+            windowStateStore.saveWindowState(gameWindow, "gameWindow");
         }
-        stateManager.saveToFile();
+        windowStateStore.saveAllStates();
     }
 }
