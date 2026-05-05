@@ -19,6 +19,3 @@ public class GameWindow extends JInternalFrame {
     }
 }
 
-/*
-git
- */

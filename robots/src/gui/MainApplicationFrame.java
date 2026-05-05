@@ -29,7 +29,7 @@ public class MainApplicationFrame extends JFrame {
     private GameWindow gameWindow;
     private RobotCoordinatesWindow coordinatesWindow;
 
-    // Таймер для обновления модели
+
     private javax.swing.Timer modelUpdateTimer;
 
     public MainApplicationFrame() {

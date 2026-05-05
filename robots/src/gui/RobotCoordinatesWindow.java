@@ -12,9 +12,7 @@ import javax.swing.border.TitledBorder;
 
 public class RobotCoordinatesWindow extends JInternalFrame
         implements RobotModel.RobotStateListener {
-/*
-Для гита
- */
+
     private final JLabel xCoordinateLabel;
     private final JLabel yCoordinateLabel;
     private final JLabel directionLabel;

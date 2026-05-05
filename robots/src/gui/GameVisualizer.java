@@ -34,7 +34,7 @@ public class GameVisualizer extends JPanel implements RobotModel.RobotStateListe
         // Подписываемся на обновления модели
         model.addListener(this);
 
-        // Загружаем начальные данные из модели
+
         updateFromModel();
 
         m_timer.schedule(new TimerTask() {
