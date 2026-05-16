@@ -121,3 +121,4 @@ public class GameVisualizer extends JPanel implements RobotModel.RobotStateListe
         drawOval(g, x, y, 5, 5);
     }
 }
+// комм

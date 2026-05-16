@@ -23,3 +23,4 @@ public class RobotsProgram
         frame.setExtendedState(Frame.MAXIMIZED_BOTH);
       });
     }}
+// komm
