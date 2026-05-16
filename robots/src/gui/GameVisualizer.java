@@ -31,9 +31,7 @@ public class GameVisualizer extends JPanel implements RobotModel.RobotStateListe
     public GameVisualizer(RobotModel model) {
         this.model = model;
 
-        // Подписываемся на обновления модели
         model.addListener(this);
-
 
         updateFromModel();
 
@@ -47,14 +45,12 @@ public class GameVisualizer extends JPanel implements RobotModel.RobotStateListe
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                setTargetPosition(e.getPoint());
+                model.setTargetPosition(e.getPoint().x, e.getPoint().y);
             }
         });
         setDoubleBuffered(true);
     }
-    /*
-    git
-     */
+
     private void updateFromModel() {
         robotPositionX = model.getRobotPositionX();
         robotPositionY = model.getRobotPositionY();

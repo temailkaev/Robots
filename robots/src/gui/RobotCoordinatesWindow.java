@@ -27,7 +27,7 @@ public class RobotCoordinatesWindow extends JInternalFrame
         mainPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         JPanel infoPanel = new JPanel(new GridLayout(5, 2, 10, 10));
-        infoPanel.setBorder(new TitledBorder("Текущеесостояние"));
+        infoPanel.setBorder(new TitledBorder("Текущее состояние"));
 
         infoPanel.add(new JLabel("Позиция X:", SwingConstants.RIGHT));
         xCoordinateLabel = new JLabel("0.00", SwingConstants.LEFT);

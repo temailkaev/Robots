@@ -22,13 +22,13 @@ import log.Logger;
 public class MainApplicationFrame extends JFrame {
 
     private final JDesktopPane desktopPane = new JDesktopPane();
-    private final WindowStateStore windowStateStore = new WindowStateStore();
-    private final RobotModel robotModel = new RobotModel();
+    private final ApplicationDependencies deps = new ApplicationDependencies();
+    private final WindowStateStore windowStateStore = deps.getWindowStateStore();
+    private final RobotModel robotModel = deps.getRobotModel();
 
     private LogWindow logWindow;
     private GameWindow gameWindow;
     private RobotCoordinatesWindow coordinatesWindow;
-
 
     private javax.swing.Timer modelUpdateTimer;
 
@@ -235,9 +235,7 @@ public class MainApplicationFrame extends JFrame {
             System.exit(0);
         }
     }
-/*
-git
- */
+
     private void saveWindowStates() {
         if (logWindow != null) {
             windowStateStore.saveWindowState(logWindow, "logWindow");
